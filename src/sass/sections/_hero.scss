@@ -1,86 +1,127 @@
 #hero {
-  min-height: 100vh;
-  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border-bottom: 0px;
-  background: $white-color;
-  font-weight: 400;
-  color: $dark-blue-text;
-  padding: 0rem 5.6rem;
-  margin-bottom: 0;
-  margin-left: 200;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+  height: 100vh;
+  text-align: center;
+  padding: 0 1.6rem;
 
-  // Set position sticky so the jumbotron stays fixed while you scroll.
-  // position: sticky;
-
-  // If you want to set a background image on the hero section, uncomment these with your custom image
-
-  /* background: url("/src/assets/[your-image].png");
-  background-position: center;
-  background-size: cover; */
-
-  #animated-text {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-}
-#animated-text:after {
-    content: "|";
-    margin-left: 2px;
-    opacity: 1;
-    animation: blink 1s infinite;
-}
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-
-  @include respond(phone) {
-    padding: 0rem $default-font-size;
+  .container {
+    width: 100%; // Ensures the container takes the full width
+    max-width: 960px; // Adjust this value based on your design
+    margin: 0 auto; // Center the container
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-title {
-    font-size: 5.6rem;
-    font-weight: 700;
-    margin-bottom: 3.2rem;
-    text-align: left;
-
-    @include respond(tab-land) {
-      font-size: 4rem;
-    }
-    @include respond(tab-port) {
-      font-size: 3.6rem;
-      text-align: center;
-    }
-    @include respond(phone) {
-      font-size: 3.5rem;
-      line-height: 1.5;
-    }
-    @include respond(phone-xs) {
-      font-size: 2.8rem;
-    }
+    margin: 0;
+    padding: 0;
+    font-size: 5.6rem; // Adjust the font size for mobile devices
+    line-height: 1.3;
   }
 
   .hero-cta {
-    display: flex;
+    margin-top: 20px; // Add some space above the CTA button
+  }
 
-    @include respond(tab-port) {
-      justify-content: center;
-    }
+  .cta-btn {
+    font-size: 2rem; // Adjust the button font size for better readability on mobile
+  }
+}
 
-    & a {
-      font-size: 2.4rem;
+@media only screen and (max-width: 600px) {
+  #hero {
+    padding: 0 10px; // Adjust padding for very small screens
 
-      @include respond(phone) {
-        font-size: 2rem;
-      }
+    .hero-title {
+      font-size: 3.5rem; // Further adjust the font size for very small screens
     }
   }
 }
+
+
+
+// #hero {
+//   min-height: 100vh;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column; // Ensures vertical stacking of elements
+//   justify-content: center; // Vertically center content
+//   align-items: center; // Horizontally center content
+//   text-align: center; // Center-align the text
+//   background: $white-color;
+//   padding: 0rem 1.6rem; // Adjusted padding for small screens
+//   margin: 0 auto; // Center align the container
+
+//   // Set position sticky so the jumbotron stays fixed while you scroll.
+//   // position: sticky;
+
+//   // If you want to set a background image on the hero section, uncomment these with your custom image
+
+//   /* background: url("/src/assets/[your-image].png");
+//   background-position: center;
+//   background-size: cover; */
+
+//   #animated-text {
+//     display: inline-block;
+//     overflow: hidden;
+//     vertical-align: bottom;
+// }
+// #animated-text:after {
+//     content: "|";
+//     margin-left: 2px;
+//     opacity: 1;
+//     animation: blink 1s infinite;
+// }
+// @keyframes blink {
+//     0%, 100% { opacity: 1; }
+//     50% { opacity: 0; }
+// }
+
+
+//   @include respond(phone) {
+//     padding: 0rem $default-font-size;
+//   }
+
+//   .hero-title {
+//     font-size: 5.6rem;
+//     font-weight: 700;
+//     margin-bottom: 3.2rem;
+
+
+//     @include respond(tab-land) {
+//       font-size: 4rem;
+//     }
+//     @include respond(tab-port) {
+//       font-size: 3.6rem;
+//       text-align: center;
+//     }
+//     @include respond(phone) {
+//       font-size: 3.5rem;
+//       line-height: 1.5;
+//     }
+//     @include respond(phone-xs) {
+//       font-size: 2.8rem;
+//     }
+//   }
+
+//   .hero-cta {
+//     display: flex;
+
+//     @include respond(tab-port) {
+//       justify-content: center;
+//     }
+
+//     & a {
+//       font-size: 2.4rem;
+
+//       @include respond(phone) {
+//         font-size: 2rem;
+//       }
+//     }
+//   }
+// }
