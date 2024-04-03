@@ -11,6 +11,13 @@
 
   .project-wrapper {
     margin-bottom: 15rem;
+    .row {
+      .col-md-4 {
+        display: flex; // Added for vertical alignment
+        flex-direction: column; // Stack children vertically
+      } 
+      
+    }
 
     @include respond(phone) {
       margin-bottom: 0rem;
@@ -45,6 +52,7 @@
       }
 
       & p > a {
+        font-size: 1.2em;
         color: $secondary-color;
       }
     }

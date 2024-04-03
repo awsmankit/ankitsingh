@@ -1,0 +1,48 @@
+#skills {
+    color:$dark-blue-text; // Choose a text color
+    height: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%); // Mirrored tilt
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+    padding-top: 5%; // Adjust padding for visual balance
+  
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; // Adjust as needed for spacing between skills
+  
+      .skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px; // Adjust the size as needed
+        height: 100px; // Adjust the size as needed
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px); // Lift the icon up on hover
+        }
+  
+        img {
+          max-width: 60%; // Adjust based on icon size
+          max-height: 60%; // Adjust based on icon size
+          transition: transform 0.3s ease;
+  
+          &:hover {
+            transform: scale(1.1); // Slightly enlarge the icon on hover
+          }
+        }
+      }}
+  
+    // Responsive adjustments (if necessary)
+    @include respond(tab-land) {
+      -webkit-clip-path: none;
+      clip-path: none;
+    }
+  }
+  
+  .cta-btn--resume, .cta-btn--skills {
+    // Your button styling here
+    margin-right: 10px; // Add spacing between buttons
+  }
+  

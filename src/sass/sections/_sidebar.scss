@@ -1,0 +1,210 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px; /* Adjust width as necessary */
+  height: 100%;
+  background-color: #fff; /* Adjust the color as needed */
+  z-index: 1000; /* Ensure sidebar is above other content */
+  overflow-y: auto; /* Enable scroll on small screens/high content */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space between top and bottom items */
+}
+
+/* Style the profile info, navigation, and social links here */
+.profile-info {
+  text-align: center;
+  padding-top: 20px; /* Adjust the padding as needed */
+  padding-bottom: 20px; /* Space before the navigation links */
+}
+
+.profile-image {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px; /* Adjust the size as needed */
+  border-radius: 50%; /* Circular image */
+  border: 3px solid #00cdac; /* Border color and width */
+  padding: 5px; /* Adjust the padding as needed */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+.profile-info h1 {
+  color: #000; /* Text color for the name */
+  margin-bottom: 10px; /* Space below the name */
+  font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000; /* Adjust link color as needed */
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #00cdac; /* Adjust hover color as needed */
+}
+
+.social-links {
+  text-align: center;
+  padding-bottom: 20px; /* Adjust the padding as needed */
+  font-size: 1.2em; /* Adjust the font size as needed */
+}
+
+.social-links a {
+  text-decoration: none;
+  margin: 0px; /* Adjust the spacing between icons as needed */
+  color: #000; /* Adjust icon color as needed */
+}
+
+.social-links a:hover {
+  color: #00cdac; /* Adjust hover color as needed */
+}
+
+/* Style for the icons (if needed) */
+.social-links img {
+  width: 24px; /* Adjust icon size as needed */
+  height: 24px; /* Adjust icon size as needed */
+  margin: 0 5px; /* Adjust spacing around icons */
+}
+
+/* Main content needs a left margin/padding to not be hidden by the sidebar */
+.main-content {
+  margin-left: 300px; /* This should match the sidebar's width */
+}
+
+// Main content padding
+.main-content {
+  margin-left: 250px; // Push content to the right to make space for the sidebar
+}
+/* Responsive behavior */
+
+.main-content {
+  margin-left: 200px; // Adjust main content margin for tablet
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; // Hide sidebar on mobile
+  }
+
+  .main-content {
+    margin-left: 0; // Main content should take full width on mobile
+  }
+}
+
+/* Adjust sidebar toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 50%;
+  right: -0px; /* Adjust the position to center it vertically */
+  transform: translateY(-50%); /* Center vertically */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: font-size 0.3s ease; /* Smooth transition for font size */
+}
+
+.sidebar-toggle:hover {
+  font-size: 1.5em; /* Increase font size slightly on hover */
+}
+
+.sidebar-toggle i {
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.sidebar-toggle:hover i {
+  transform: scale(1.2); /* Scale up the icon slightly on hover */
+}
+
+/* Adjust the icon size and color as needed */
+.sidebar-toggle .fas {
+  font-size: 30px;
+  color: #333;
+}
+
+/* Adjustments when sidebar is collapsed */
+.body-sidebar-collapsed .sidebar {
+  transform: translateX(-100%); /* or right: -100%; based on your layout */
+  transition: transform 0.3s ease;
+}
+
+.body-sidebar-collapsed .sidebar-toggle .fas {
+  transform: rotate(180deg); /* Flips the arrow to point right */
+}
+
+.sidebar-toggle-open {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1000; /* Adjust if necessary to ensure visibility */
+  display: none; /* Hidden by default */
+  transition: font-size 0.3s ease; /* Smooth transition for font size */
+}
+
+.sidebar-toggle-open:hover {
+  font-size: 1.5em; /* Increase font size slightly on hover */
+}
+
+.sidebar-toggle-open i {
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.sidebar-toggle-open:hover i {
+  transform: scale(1.2); /* Scale up the icon slightly on hover */
+}
+
+.body-sidebar-collapsed .sidebar-toggle-open {
+  display: block; /* Show when sidebar is collapsed */
+}
+
+/* Adjustments when sidebar is expanded */
+.main-content {
+  transition: margin-left 0.3s; // Smooth transition for margin changes
+  margin-left: 300px; // Adjust according to your sidebar width
+}
+
+/* Adjustments when sidebar is collapsed */
+.body-sidebar-collapsed .main-content {
+  margin-left: 0; // Remove margin when sidebar is collapsed
+}
+
+/* Sidebar collapse/expand styles */
+.sidebar {
+  transition: transform 0.3s ease; // Smooth transition for sidebar
+}
+
+.body-sidebar-collapsed .sidebar {
+  transform: translateX(-100%); // Move sidebar out of view
+}
+
+/* Ensure that the toggle button for reopening the sidebar is visible and functional */
+.body-sidebar-collapsed .sidebar-toggle-open {
+  display: block;
+}
+
+/* Responsive behavior for mobile devices */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); // Hide sidebar by default on mobile
+  }
+
+  .main-content {
+    margin-left: 0; // Full width on mobile
+  }
+
+  .body-sidebar-collapsed .sidebar-toggle-open {
+    display: block; // Always show the toggle button on mobile
+  }
+}

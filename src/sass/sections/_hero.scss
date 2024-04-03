@@ -9,6 +9,7 @@
   color: $dark-blue-text;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
+  margin-left: 200;
   top: 0;
   left: 0;
   bottom: 0;
@@ -23,6 +24,23 @@
   /* background: url("/src/assets/[your-image].png");
   background-position: center;
   background-size: cover; */
+
+  #animated-text {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+#animated-text:after {
+    content: "|";
+    margin-left: 2px;
+    opacity: 1;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 
   @include respond(phone) {
     padding: 0rem $default-font-size;
